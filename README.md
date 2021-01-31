@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Steps to run the project:
 
 1. clone project.
-2. Run `yarn install`.
+2. Run `yarn install-dep`.
 3. Run `yarn serve`.
 4. Navigate to `http://localhost:4200/`.
 
