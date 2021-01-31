@@ -8,8 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "client-install": "yarn install",
-    "server-install": "cd server && yarn install",
+    "install-dep": "yarn install && cd server && yarn install",
     "serve": "concurrently \"ng serve\" \"node_modules/.bin/ts-node server/server.ts\""
   },
   "private": true,
