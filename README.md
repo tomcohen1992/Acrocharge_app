@@ -24,7 +24,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 
 
-## Things that should be done:
+## Additional things that can be added to the project:
 
 front:
 1. implement local data streaming
