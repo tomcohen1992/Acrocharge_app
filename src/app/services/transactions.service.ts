@@ -28,7 +28,7 @@ export class TransactionsService {
   }
 
   add(transition: ITransactions): Promise<ITransactions> {
-    return this.http.post<ITransactions>(`${this.url}/transaction/add/0`, transition).toPromise();
+    return this.http.post<ITransactions>(`${this.url}/add`, transition).toPromise();
   }
 
   delete(id: number): Promise<ITransactions[]> {
@@ -41,7 +41,7 @@ export class TransactionsService {
       },
     };
 
-    return this.http.delete<ITransactions[]>(this.url, options).toPromise();
+    return this.http.delete<ITransactions[]>(`${this.url}/delete`, options).toPromise();
   }
 
 

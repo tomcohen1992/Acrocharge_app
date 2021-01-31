@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-app.post('/transaction/add/0', async (req, res) => {
+app.post('/add', async (req, res) => {
   const transaction = new Transaction({
     id: req.body.id,
     first_name: req.body.first_name,
@@ -60,7 +60,7 @@ app.post('/transaction/add/0', async (req, res) => {
 
 app.get('/', async (req, res) => {
   try {
-    const transactions = Transaction.find().sort({first_name: -1});
+    const transactions = await Transaction.find().sort({first_name: -1});
     res.send(transactions);
   } catch (err) {
     res.json(err);
@@ -88,7 +88,7 @@ app.put('/update', async (req, res) => {
   }
 });
 
-app.delete('', async (req, res) => {
+app.delete('/delete', async (req, res) => {
   try {
     const removedTransaction = await Transaction.deleteOne({ id: req.body.id });
     res.send(removedTransaction);

@@ -1,0 +1,98 @@
+<div class="container">
+  <button class="btn btn-secondary" (click)="back()">Back</button>
+
+  <h2>{{header}}</h2>
+  <form #userForm="ngForm">
+
+    <h6>Customer Info</h6>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="first_name" class="form-label">First Name</label>
+        <input required="required" type="text" class="form-control" id="first_name" name="first_name" [ngModel]="transaction.first_name" placeholder="Enter First Name">
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input required="required" type="text" class="form-control" id="last_name" name="last_name" [ngModel]="transaction.last_name" placeholder="Enter Last Name">
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input required="required" type="text" class="form-control" id="email" name="email" [ngModel]="transaction.email" placeholder="Enter Email">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input required="required" type="text" class="form-control" id="country" name="country" [ngModel]="transaction.country" placeholder="Enter Country">
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label for="city" class="form-label">City</label>
+        <input required="required" type="text" class="form-control" id="city" name="city" [ngModel]="transaction.city" placeholder="Enter City">
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label for="street" class="form-label">Street</label>
+        <input required="required" type="text" class="form-control" id="street" name="street" [ngModel]="transaction.street" placeholder="Enter Street">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <label for="gender" class="form-label">Gender</label>
+        <select required="required" [ngModel]="transaction.gender" id="gender" name="gender" class="form-select" aria-label=".form-select-sm example">
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+        </select>
+      </div>
+
+      <div class="col-md-4  mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input required="required" type="text" class="form-control" id="phone" name="phone" [ngModel]="transaction.phone" placeholder="Enter Phone">
+      </div>
+    </div>
+
+
+    <h6>Transaction Info</h6>
+
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <label for="total_price" class="form-label">Total Price</label>
+        <input required="required" type="number" class="form-control" id="total_price" name="total_price" [ngModel]="transaction.total_price" placeholder="Enter Total Price" ngModel="transition.total_price">
+      </div>
+
+      <div class="col-md-3  mb-3">
+        <label for="currency" class="form-label">Currency</label>
+        <select required="required" [ngModel]="transaction.currency" id="currency" name="currency" class="form-select">
+          <option value="NIO">NIO</option>
+          <option value="IDR">IDR</option>
+          <option value="CUP">CUP</option>
+          <option value="CNY">CNY</option>
+          <option value="EUR">EUR</option>
+          <option value="UZS">UZS</option>
+        </select>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <label for="cerdit_card_type" class="form-label">Cerdit Card Type</label>
+        <select required="required" [ngModel]="transaction.cerdit_card_type" id="cerdit_card_type" name="cerdit_card_type" class="form-select" aria-label=".form-select-sm example">
+          <option value="jcb">JCB</option>
+          <option value="visa">VISA</option>
+          <option value="switch">SWITCH</option>
+          <option value="maestro">MAESTRO</option>
+          <option value="diners-club-enroute"> DINERS CLUB</option>
+        </select>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <label for="cerdit_card_number" class="form-label">Cerdit Card Number</label>
+        <input required="required" class="form-control" id="cerdit_card_number" name="cerdit_card_number" [ngModel]="transaction.cerdit_card_number" placeholder="Enter Cerdit Card Number">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="onSubmit(userForm)">Submit</button>
+  </form>
+  <div *ngIf="userForm.status === 'INVALID'" class="error">{{err}}</div>
+</div>

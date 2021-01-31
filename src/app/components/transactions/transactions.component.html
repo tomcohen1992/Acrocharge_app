@@ -1,0 +1,7 @@
+<div class="container">
+  <h2>List Of Transactions:</h2>
+  <button type="button" class="btn btn-secondary">
+    <a routerLink="transaction/add/0">Add Transaction</a>
+  </button>
+  <app-table (listChange)="listChangeHandler()" [transactions]="transactions$"></app-table>
+</div>
